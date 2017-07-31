@@ -1,5 +1,8 @@
 all:    css/badge-happy-medium.png css/badge-sad-medium.png css/badge-gold-medium.png
 
+clean:
+	rm css/*
+
 css/badge-%-large.png:    assets/badge-%.png assets/tux-%.png
 	composite -gravity center $(word 2,$^) $(word 1,$^) "$@"
 
