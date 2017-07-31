@@ -1,0 +1,3 @@
+apt-get install -y make imagemagick
+apt-get install -y nodejs
+npm install -g less
