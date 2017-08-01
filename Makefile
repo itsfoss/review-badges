@@ -1,4 +1,5 @@
 all:    css/review.css \
+        css/bullet-good.png css/bullet-bad.png \
         css/badge-happy-medium.png css/badge-sad-medium.png css/badge-gold-medium.png
 
 clean:
@@ -17,11 +18,20 @@ css/badge-%-large.png:    assets/badge-%.png assets/tux-%.png
 css/badge-%-medium.png: css/badge-%-large.png
 	convert "$<" -resize 190x190 "$@"
 
+css/bullet-bad.png: assets/bullet-bad.png
+	convert "$<" +level-colors '#e83000', -resize 16x16 png32:"$@"
+
+css/bullet-good.png: assets/bullet-good.png
+	convert "$<" +level-colors '#ffffff', -resize 16x16 png32:"$@"
+
 assets/tux-happy.svg: assets/tux.svg
 	cp "$<" "$@"
 
 assets/tux-gold.svg: assets/tux.svg
 	cp "$<" "$@"
+
+#assets/bullet-%.png: assets/bullet-%.svg
+#	inkscape --export-png="$@" --export-area-page --export-width=16 --export-height=16 "$<"
 
 assets/%.png: assets/%.svg
 	inkscape --export-png="$@" --export-area-page "$<"
