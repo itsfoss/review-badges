@@ -21,3 +21,15 @@ then add:
 <style rel="stylesheet" href="path/to/review-footer/css/review.css"> 
 to include the CSS after the other stylesheet of your page/template
 
+MODIFY
+======
+
+The badge icon is designed in a modular way and the Makefile combine
+the different part to create the three badges:
+
+![Gold Badge](css/badge-gold.png)
+![Happy Badge](css/badge-happy.png)
+![Sad Badge](css/badge-sad.png)
+
+The Tux logo can be changed by replacing the corresponding assets/tug-*.svg
+images and running `make` again
