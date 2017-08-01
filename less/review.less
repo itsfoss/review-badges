@@ -5,6 +5,7 @@
 @badge-block-width: 250px;
 @badge-block-height: 200px;
 @badge-block-offset: -(@badge-block-height)/4;
+@review-pad: 20px;
 
 .review-footer {
     /* badge pseudo block */
@@ -15,8 +16,9 @@
         height:@badge-block-height;
         width:@badge-block-width;
         position: relative;
-        top: @badge-block-offset;
+        top: @badge-block-offset - @review-pad;
         left: @badge-block-width;
+        margin-left: -@badge-block-width;
         background: url(badge-happy-medium.png) no-repeat center left;
     }
 
@@ -31,10 +33,12 @@
     & {
         margin-top: -@badge-block-offset;
         border-top: solid @hilite-color 4px;
+        padding-right: @badge-block-width;
+        padding-top: @review-pad;
+        padding-bottom: @review-pad;
         background: @background-color;
         color: @text-color;
 
-        padding-right: @badge-block-width;
     }
 
     /* typical review content */
@@ -42,9 +46,8 @@
         float: left;
         margin-left: 3em;
         margin-right: 0px;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        //min-width: 20%;
+        margin-bottom: 0em;
+        min-width: 35%;
     }
 
    .the-good::before, .the-bad::before {
@@ -55,6 +58,7 @@
 
    .the-good {
         color: #ffffff;
+        max-width: 38%;
 
         &::before {
             content: "THE GOOD";
@@ -67,6 +71,7 @@
 
    .the-bad {
         color: @hilite-color;
+        max-width: 38%;
 
         &::before {
             content: "THE BAD";
