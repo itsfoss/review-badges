@@ -1,0 +1,23 @@
+CSS style for review footer used on ItsFOSS (https://itsfoss.com)
+
+BUILD
+=====
+
+You need a couple of tools to build the CSS.
+You can find the dependencies for Debian in DEBIAN-DEPS
+
+Once installed, type:
+
+make
+
+at the root of the project. 
+All the produtions goes into the css/ directory (stylesheet and images)
+
+INSTALL
+=======
+
+Copy the folder css/ and its content into you website static assets folder,
+then add:
+<style rel="stylesheet" href="path/to/review-footer/css/review.css"> 
+to include the CSS after the other stylesheet of your page/template
+
