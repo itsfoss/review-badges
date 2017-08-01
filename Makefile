@@ -1,7 +1,15 @@
-all:    css/badge-happy-medium.png css/badge-sad-medium.png css/badge-gold-medium.png
+all:    css/review.css \
+        css/badge-happy-medium.png css/badge-sad-medium.png css/badge-gold-medium.png
 
 clean:
 	rm css/*
+
+serve:  all
+	echo "Point your browser to http://localhost:3100/test"
+	python -m SimpleHTTPServer 3100
+
+css/%.css: less/%.less
+	lessc "$<" "$@"
 
 css/badge-%-large.png:    assets/badge-%.png assets/tux-%.png
 	composite -gravity center $(word 2,$^) $(word 1,$^) "$@"

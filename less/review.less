@@ -1,0 +1,40 @@
+@hilite-color: #e03800;
+@background-color: #1d1e20;
+@text-color: #fefefe;
+
+@badge-block-width: 300px;
+@badge-block-height: 200px;
+@badge-block-offset: -(@badge-block-height)/4;
+
+.review-footer::before {
+    content: "";
+    display: block;
+    float:right;
+    height:@badge-block-height;
+    width:@badge-block-width;
+    position: relative;
+    top: @badge-block-offset;
+    left: @badge-block-width;
+    background: url(badge-happy-medium.png) no-repeat center;
+}
+
+.review-footer::after {
+    content: "";
+    display: block;
+    clear:left;
+}
+
+.review-footer {
+    margin-top: -@badge-block-offset;
+    border-top: solid @hilite-color 4px;
+    background: @background-color;
+    color: @text-color;
+
+    padding-right: @badge-block-width;
+}
+
+.review-footer > * {
+    float: left;
+    //min-width: 20%;
+}
+
